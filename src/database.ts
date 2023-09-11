@@ -19,7 +19,7 @@ export const users: TUser[] = [{
 export const products: TProducts[] = [{
     id: 'p001',
     name: 'Nintendo Switch',
-    price: 1339,
+    price: 1340,
     description: 'O melhor portátil que existe',
     imageUrl: 'https://drive.google.com/file/d/10cKfJtuoiej-BNIDBRwIdGgxV_UEVWXV/view?usp=drive_link'
 }, 
