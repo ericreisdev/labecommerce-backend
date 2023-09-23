@@ -19,7 +19,7 @@ exports.users = [{
 exports.products = [{
         id: 'p001',
         name: 'Nintendo Switch',
-        price: 1339,
+        price: 1340,
         description: 'O melhor portátil que existe',
         imageUrl: 'https://drive.google.com/file/d/10cKfJtuoiej-BNIDBRwIdGgxV_UEVWXV/view?usp=drive_link'
     },
@@ -30,4 +30,41 @@ exports.products = [{
         description: 'O melhor console que existe',
         imageUrl: 'https://drive.google.com/file/d/10dQN7pDn7Hjw-rEw7jJ2UtNl2CSB8-HW/view?usp=drive_link'
     }];
+const createUser = (id, name, email, password) => {
+    const newUser = {
+        id: id,
+        name: name,
+        email: email,
+        password: password,
+        createdAt: new Date().toISOString()
+    };
+    exports.users.push(newUser);
+    return 'Cadastro realizado com sucesso';
+};
+const getAllUsers = () => {
+    return exports.users;
+};
+const createProduct = (id, name, price, description, imageUrl) => {
+    const newProduct = {
+        id: id,
+        name: name,
+        price: price,
+        description: description,
+        imageUrl: imageUrl,
+    };
+    exports.products.push(newProduct);
+    return 'Produto criado com sucesso';
+};
+const getAllProducts = () => {
+    return exports.products;
+};
+const searchProductsByName = (searchName) => {
+    const filteredProducts = exports.products.filter((item) => {
+        return item.name.toLowerCase().includes(searchName.toLowerCase());
+    });
+    return filteredProducts;
+};
+// console.log(createUser('021', 'Logan', 'wolverine@xmen.com', 'jeangreys2'), getAllUsers());
+// console.log(createProduct('021', 'Adamantium 2.0', 2000000000, 'The impossible cut', 'https://drive.google.com/file/d/13x6_Z0hVvrR9TOjaGMVMdKYSMTqIKn2p/view?usp=drive_link'), getAllProducts());
+console.table(searchProductsByName('Nintendo Switch'));
 //# sourceMappingURL=database.js.map
